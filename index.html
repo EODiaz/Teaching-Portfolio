@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Your Name] — Teaching Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:   #2E4057;
+      --mid:    #4A6080;
+      --red:    #7A1E1E;
+      --cream:  #F2EDE3;
+      --warm:   #FBF9F3;
+      --border: #D8D0C0;
+      --text:   #1A1A1A;
+      --sub:    #555555;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--dark);
+      color: #fff;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+    header .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #A8C0D6;
+      margin-bottom: .6rem;
+    }
+    header h1 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -.01em;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1rem;
+      color: #C8D8E8;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: #243348;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      overflow-x: auto;
+    }
+    nav a {
+      color: #B0C4D8;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      padding: .75rem 1.25rem;
+      transition: color .15s, background .15s;
+      white-space: nowrap;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,.07); }
+
+    /* ── MAIN LAYOUT ── */
+    main { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+
+    section { margin-bottom: 3.5rem; }
+
+    h2 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--dark);
+      border-bottom: 2px solid var(--dark);
+      padding-bottom: .35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text); font-size: .97rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── ARTIFACT GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: .25rem;
+    }
+
+    .card {
+      background: var(--warm);
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+      padding: 1.4rem 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .15s, transform .12s;
+    }
+    .card:hover {
+      box-shadow: 4px 4px 0 var(--dark);
+      transform: translateY(-2px);
+    }
+    .card-tag {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: .45rem;
+    }
+    .card h3 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: .55rem;
+      line-height: 1.3;
+    }
+    .card p {
+      font-size: .87rem;
+      color: var(--sub);
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .card a {
+      display: inline-block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--dark);
+      border: 1.5px solid var(--dark);
+      padding: .4rem .85rem;
+      border-radius: 2px;
+      text-decoration: none;
+      align-self: flex-start;
+      transition: background .12s, color .12s;
+    }
+    .card a:hover { background: var(--dark); color: #fff; }
+
+    /* ── PHILOSOPHY PULLQUOTE ── */
+    .pullquote {
+      border-left: 4px solid var(--dark);
+      padding: 1rem 1.5rem;
+      background: var(--warm);
+      margin: 1.5rem 0;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.55;
+    }
+
+    /* ── AI POLICY HIGHLIGHT ── */
+    .policy-box {
+      background: var(--warm);
+      border: 1.5px solid var(--border);
+      border-top: 4px solid var(--dark);
+      padding: 1.5rem;
+      border-radius: 0 0 3px 3px;
+    }
+    .policy-box h3 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: .75rem;
+    }
+    .policy-box ul {
+      padding-left: 1.2rem;
+      font-size: .92rem;
+      color: var(--sub);
+    }
+    .policy-box ul li { margin-bottom: .45rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #8AACCC;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: .82rem;
+    }
+    footer a { color: #A8C4DC; text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      header { padding: 2.5rem 1rem 2rem; }
+      main { padding: 2rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Teaching Portfolio &mdash; UCF Writing &amp; Rhetoric</p>
+  <h1>[Your Name]</h1>
+  <p>English &amp; Media Studies Teacher &nbsp;&middot;&nbsp; MA Candidate, Writing &amp; Rhetoric, UCF &nbsp;&middot;&nbsp; Miami, FL</p>
+</header>
+
+<nav aria-label="Portfolio sections">
+  <a href="#about">About</a>
+  <a href="#portfolio">Course Materials</a>
+  <a href="#philosophy">Teaching Philosophy</a>
+  <a href="#ai">AI Policy</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <h2>About This Portfolio</h2>
+    <p>This portfolio collects the course materials I developed during the Interdisciplinary Teaching seminar in UCF's Writing &amp; Rhetoric graduate program (Fall 2026). The central project is a designed section of ENC&nbsp;1101, <em>From Page to Screen: The Art of Adaptation</em>, which uses the relationship between literary texts and their screen adaptations as both the subject of inquiry and the vehicle for developing students as analytical writers and critical thinkers.</p>
+    <p>Alongside that course design, I have developed a signature assignment, an assessment rubric, an AI policy, and a teaching statement that together reflect my pedagogical commitments: to student choice, iterative revision, critical media literacy, and honest engagement with the tools and conditions that shape contemporary intellectual life.</p>
+  </section>
+
+  <!-- ── PORTFOLIO ── -->
+  <section id="portfolio">
+    <h2>Course Materials</h2>
+    <div class="grid">
+
+      <div class="card">
+        <span class="card-tag">Syllabus</span>
+        <h3>ENC 1101 &mdash; From Page to Screen: The Art of Adaptation</h3>
+        <p>Full course syllabus for a themed section of first-year composition at FIU, including course description, objectives, required materials, assessment breakdown, grading scale, late policy, and a 15-week class-by-class schedule aligned to the Fall 2026 term.</p>
+        <a href="documents/ENC1101_Syllabus_Fall2026.pdf">View Syllabus &rarr;</a>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">Signature Assignment</span>
+        <h3>The Screen Treatment</h3>
+        <p>The culminating assignment for the course, offering students two paths &mdash; an analytical essay or a creative adaptation with critical reflection &mdash; structured across three scaffolded stages: proposal, draft, and final submission.</p>
+        <a href="documents/Signature_Assignment.pdf">View Assignment &rarr;</a>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">Assessment</span>
+        <h3>Rubric for The Screen Treatment</h3>
+        <p>A four-criterion rubric assessing textual analysis, strength of argument, use of course vocabulary, and writing quality &amp; revision. Designed to apply equally across both assignment options.</p>
+        <a href="documents/Rubric.pdf">View Rubric &rarr;</a>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">AI in the Classroom</span>
+        <h3>AI Policy Statement &amp; Critical Evaluation</h3>
+        <p>A two-part document: a student-facing AI policy for the course syllabus, and an instructor-facing critical evaluation addressing copyright, labor, equity, accessibility, and Universal Design for Learning.</p>
+        <a href="documents/AI_Policy.pdf">View Policy &rarr;</a>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">AI Exercise</span>
+        <h3>Adaptation Choice Simulator &mdash; Exercise Design</h3>
+        <p>Design documentation for a structured AI planning exercise embedded in the course, in which students generate and critically evaluate possible narrative-technique approaches for their chosen source text before committing to a direction.</p>
+        <a href="documents/AI_Exercise.pdf">View Exercise &rarr;</a>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">Teaching Statement</span>
+        <h3>Teaching Statement for Job Applications</h3>
+        <p>A two-page professional teaching statement addressing pedagogical philosophy, digital humanities positioning, and a specific approach to AI in the classroom &mdash; written for a hiring committee audience.</p>
+        <a href="documents/Teaching_Statement.pdf">View Statement &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PHILOSOPHY ── -->
+  <section id="philosophy">
+    <h2>Teaching Philosophy</h2>
+    <div class="pullquote">
+      &ldquo;The most important questions about any text &mdash; who made this, for whom, and to what end &mdash; do not respect departmental boundaries, and neither should the methods we teach students to answer them.&rdquo;
+    </div>
+    <p>My teaching centers on a simple premise: students read more carefully when they care about what they are reading, and they write more honestly when they have genuine stakes in the argument. In my AICE English Language and Media Studies courses at South Miami Senior High, I build from texts students already encounter and ask harder questions about them. At the college level, that same instinct drives the design of <em>From Page to Screen</em>, where students choose their own source texts and their own mode of inquiry&nbsp;&mdash; because genuine choice is not an accommodation, it is a theory of motivation made concrete.</p>
+    <p>The digital humanities dimension of my practice is embedded in the questions I ask, not layered on top. When students analyze a film poster or a streaming interface alongside a literary text, they are already examining how form shapes meaning, how platform conditions reception, how authorship is distributed. My goal is to make that work visible and nameable &mdash; and to send students out of the course with habits of inquiry that work on any text, in any medium.</p>
+  </section>
+
+  <!-- ── AI POLICY ── -->
+  <section id="ai">
+    <h2>Approach to AI</h2>
+    <p>My course AI policy emerged from firsthand experimentation rather than institutional guidance. Using AI tools to perform the same textual and visual analysis I ask students to perform &mdash; and noting precisely where the AI succeeded and where it failed &mdash; produced a clearer account of the tool's limitations than any policy document could. The result is an approach built around three commitments:</p>
+    <div class="policy-box">
+      <h3>Three Principles</h3>
+      <ul>
+        <li><strong>AI as object of study, not just a tool.</strong> Students are invited to use AI as a thinking partner and planning aid, and are required to document where the tool fell short and what their own thinking added.</li>
+        <li><strong>Transparency over prohibition.</strong> Every assignment requires an AI Use Statement that names the tools used, the specific uses, and at least one concrete limitation or bias encountered in the AI's engagement with the material.</li>
+        <li><strong>Honest reckoning with cost.</strong> These tools were built through labor chains that include underpaid data workers, and their operation carries real environmental costs. A course that asks who made this and at what cost applies that question to its own tools.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <p>[Your Name] &nbsp;&middot;&nbsp; [Email address] &nbsp;&middot;&nbsp; <a href="[LinkedIn or Humanities Commons URL]">[Professional Profile]</a></p>
+  <p style="margin-top:.5rem; font-size:.75rem; color:#5A7A9A;">Built with HTML/CSS and deployed via GitHub Pages &middot; UCF Writing &amp; Rhetoric, Fall 2026</p>
+</footer>
+
+</body>
+</html>
